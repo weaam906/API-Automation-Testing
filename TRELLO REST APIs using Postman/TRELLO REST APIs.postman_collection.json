@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "754dab14-e087-48ad-be2e-07a87f7df2b7",
+		"name": "TRELLO REST APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14596965"
+	},
+	"item": [
+		{
+			"name": "1-Create a new organization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}organizations/?key=f4002854f34c545a2abd2e016718c28a&token=ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9&displayName={displayName}",
+					"host": [
+						"{{BaseURL}}organizations"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4002854f34c545a2abd2e016718c28a"
+						},
+						{
+							"key": "token",
+							"value": "ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9"
+						},
+						{
+							"key": "displayName",
+							"value": "{displayName}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-Get Organizations for a member",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}members/me?organizations=all&key=f4002854f34c545a2abd2e016718c28a&token=ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9",
+					"host": [
+						"{{BaseURL}}members"
+					],
+					"path": [
+						"me"
+					],
+					"query": [
+						{
+							"key": "organizations",
+							"value": "all"
+						},
+						{
+							"key": "key",
+							"value": "f4002854f34c545a2abd2e016718c28a"
+						},
+						{
+							"key": "token",
+							"value": "ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3-Create a board inside an organization",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}boards/?name=Api Board&key=f4002854f34c545a2abd2e016718c28a&token=ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9",
+					"host": [
+						"{{BaseURL}}boards"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Api Board"
+						},
+						{
+							"key": "key",
+							"value": "f4002854f34c545a2abd2e016718c28a"
+						},
+						{
+							"key": "token",
+							"value": "ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4-Get boards in an organization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}members/me?boards=open&key=f4002854f34c545a2abd2e016718c28a&token=ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9",
+					"host": [
+						"{{BaseURL}}members"
+					],
+					"path": [
+						"me"
+					],
+					"query": [
+						{
+							"key": "boards",
+							"value": "open"
+						},
+						{
+							"key": "key",
+							"value": "f4002854f34c545a2abd2e016718c28a"
+						},
+						{
+							"key": "token",
+							"value": "ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5-Create a new list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}lists?name=Api List&idBoard={{boardID}}&key=f4002854f34c545a2abd2e016718c28a&token=ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9",
+					"host": [
+						"{{BaseURL}}lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Api List"
+						},
+						{
+							"key": "idBoard",
+							"value": "{{boardID}}"
+						},
+						{
+							"key": "key",
+							"value": "f4002854f34c545a2abd2e016718c28a"
+						},
+						{
+							"key": "token",
+							"value": "ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6-Get all lists on a board",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}boards/5bc26e4b048b79835e649265/lists?key=f4002854f34c545a2abd2e016718c28a&token=ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9",
+					"host": [
+						"{{BaseURL}}boards"
+					],
+					"path": [
+						"5bc26e4b048b79835e649265",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4002854f34c545a2abd2e016718c28a"
+						},
+						{
+							"key": "token",
+							"value": "ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7-Archive a list",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}lists/63f81908f40c303b328db77d/closed?key=f4002854f34c545a2abd2e016718c28a&token=ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9&value=true",
+					"host": [
+						"{{BaseURL}}lists"
+					],
+					"path": [
+						"63f81908f40c303b328db77d",
+						"closed"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4002854f34c545a2abd2e016718c28a"
+						},
+						{
+							"key": "token",
+							"value": "ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9"
+						},
+						{
+							"key": "value",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8-Delete a board",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}boards/6052265c5dc437253db43ecd?key=f4002854f34c545a2abd2e016718c28a&token=ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9",
+					"host": [
+						"{{BaseURL}}boards"
+					],
+					"path": [
+						"6052265c5dc437253db43ecd"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4002854f34c545a2abd2e016718c28a"
+						},
+						{
+							"key": "token",
+							"value": "ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9-Delete an organization",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}organizations/63f81a18b3ae4f72045730d4?key=f4002854f34c545a2abd2e016718c28a&token=ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9",
+					"host": [
+						"{{BaseURL}}organizations"
+					],
+					"path": [
+						"63f81a18b3ae4f72045730d4"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "f4002854f34c545a2abd2e016718c28a"
+						},
+						{
+							"key": "token",
+							"value": "ATTA5ee137a59b2027836e94c75acb71fe794a9d1df5cb4db9aa909f502325f83a6151E5A0A9"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseURL",
+			"value": " https://api.trello.com",
+			"type": "string"
+		}
+	]
+}
